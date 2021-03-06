@@ -1,4 +1,11 @@
+
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 let mapleader=" "
+
 set number          "显示行号
 set relativenumber  "显示相对行号
 set cursorline      "高亮当前行
