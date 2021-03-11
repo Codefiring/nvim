@@ -70,7 +70,7 @@ noremap <LEADER><CR> :nohlsearch<CR>
 
 noremap S :w<CR>        "使用 S 保存
 noremap Q :q<CR>        "使用 Q 普通退出
-noremap R :source $MYVIMRC<CR> 
+noremap R :source ~/.vimrc<CR> 
 noremap ; :
 
 "=====分屏======
@@ -86,6 +86,8 @@ noremap <LEADER>l <C-w>l
 
 "
 call plug#begin('~/.vim/plugged')
+"Auto complete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'vim-airline/vim-airline'
 
@@ -110,5 +112,53 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
+
+" Editor Enhancement
+Plug 'tpope/vim-surround'
+Plug 'gcmt/wildfire.vim'
+
+
+" ===
+" === coc.nvim
+" ===
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" " delays and poor user experience.
+set updatetime=300
+
+"don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Use tab for trigger completion with characters ahead and navigate.
+" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" " other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+      let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" " format on enter, <cr> could be remapped by other vim plugin
+
+
+let g:coc_global_extensions = ['coc-vimlsp']
+
+
+
 
 call plug#end()
