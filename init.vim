@@ -192,6 +192,37 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+"===coc-translator 
+" NOTE: do NOT use `nore` mappings
+" " popup
+nmap <Leader>t <Plug>(coc-translator-p)
+vmap <Leader>t <Plug>(coc-translator-pv)
+" echo
+nmap <Leader>e <Plug>(coc-translator-e)
+vmap <Leader>e <Plug>(coc-translator-ev)
+" replace
+nmap <Leader>r <Plug>(coc-translator-r)
+vmap <Leader>r <Plug>(coc-translator-rv)
+
+"===coc-explorer
+nnoremap <LEADER>E :CocCommand explorer<CR>
+
+"===coc-calc
+" append result on current expression
+nmap <Leader>ca <Plug>(coc-calc-result-append)
+" replace result on current expression
+nmap <Leader>cr <Plug>(coc-calc-result-replace)
+
+"===coc.highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"===coc.actions
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+      execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 
 let g:coc_global_extensions = ['coc-vimlsp',
@@ -203,7 +234,12 @@ let g:coc_global_extensions = ['coc-vimlsp',
             \'coc-translator',
             \'coc-tsserver',
             \'coc-syntax',
-            \'coc-lists']
+            \'coc-lists',
+            \'coc-calc',
+            \'coc-highlight',
+            \'coc-action',
+            \'coc-explorer']
+
 
 
 
