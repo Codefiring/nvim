@@ -86,8 +86,11 @@ noremap <LEADER>l <C-w>l
 
 "
 call plug#begin('~/.vim/plugged')
-"Auto complete
+" Auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" snippets
+Plug 'honza/vim-snippets',
 
 Plug 'vim-airline/vim-airline'
 
@@ -104,6 +107,9 @@ Plug 'w0rp/ale'
 " Undo Tree
 Plug 'mbbill/undotree/'
 
+" C/C++
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
 " Python
 Plug 'vim-scripts/indentpython.vim'
 
@@ -116,6 +122,7 @@ Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 " Editor Enhancement
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
+Plug 'mg979/vim-visual-multi'
 
 
 " ===
@@ -218,16 +225,22 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "===coc.actions
 " Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-      execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+"function! s:cocActionsOpenFromSelected(type) abort
+"      execute 'CocCommand actions.open ' . a:type
+"endfunction
+"xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+"nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+"===coc.spell-checker
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 
 
-let g:coc_global_extensions = ['coc-vimlsp',
+let g:coc_global_extensions = [
+            \'coc-vimlsp',
             \'coc-json',
             \'coc-python',
+            \'coc-snippets',
             \'coc-marketplace',
             \'coc-prettier',
             \'coc-clangd',
@@ -237,7 +250,8 @@ let g:coc_global_extensions = ['coc-vimlsp',
             \'coc-lists',
             \'coc-calc',
             \'coc-highlight',
-            \'coc-action',
+            \'coc-spell-checker',
+            \'coc-gitignore',
             \'coc-explorer']
 
 
