@@ -1,10 +1,16 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["json"],
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-    }
-  }
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.colorSupport": false,
+
+  "translator.window.enableBorder": true,
+  "translator.window.maxWidth": 80,
+  "translator.window.maxHeight": 20,
+  "translator.enableHover": false,
+
+  "clangd.enabled": true,
+  "clangd.checkUpdates": false,
+  "clangd.semanticHighlighting": true,
+  "clangd.arguments": [],
+  "python.linting.enabled": false
 }
