@@ -98,6 +98,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+
 " Taglist
 Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
 
@@ -127,11 +128,25 @@ Plug 'mg979/vim-visual-multi'
 Plug 'Yggdroot/indentLine'
 Plug 'tomtom/tcomment_vim'
 
+
 " Visual enhancement 
 Plug 'luochen1990/rainbow'
 Plug 'ryanoasis/vim-devicons'
 
+"============= Plug settings ================
+"
 
+"=== tcomment_vim
+nmap <LEADER>cn g>c
+vmap <LEADER>cn g>
+nmap <LEADER>cu g<c
+vmap <LEADER>cu g<
+
+"=== rainbow
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
+
+
+"
 " ===
 " === coc.nvim
 " ===
@@ -257,6 +272,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 let g:coc_global_extensions = [
+            \'coc-diagnostic',
             \'coc-vimlsp',
             \'coc-json',
             \'coc-python',
@@ -272,16 +288,9 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-spell-checker',
             \'coc-gitignore',
+            \'coc-yank',
             \'coc-explorer']
 
-"=== tcomment_vim
-nmap <LEADER>cn g>c
-vmap <LEADER>cn g>
-nmap <LEADER>cu g<c
-vmap <LEADER>cu g<
-
-"=== rainbow
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
 
 
 
