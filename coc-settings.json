@@ -1,16 +1,19 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["json"],
-  "coc.preferences.extensionUpdateCheck": "weekly",
-  "coc.preferences.colorSupport": false,
-
-  "translator.window.enableBorder": true,
-  "translator.window.maxWidth": 80,
-  "translator.window.maxHeight": 20,
-  "translator.enableHover": false,
-
   "clangd.enabled": true,
   "clangd.checkUpdates": false,
   "clangd.semanticHighlighting": true,
   "clangd.arguments": [],
-  "python.linting.enabled": false
+
+  "coc.preferences.formatOnSaveFiletypes": ["json"],
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.colorSupport": false,
+
+  "diagnostic.signPriority": 1,
+
+  "python.linting.enabled": false,
+
+  "translator.window.enableBorder": true,
+  "translator.window.maxWidth": 80,
+  "translator.window.maxHeight": 20,
+  "translator.enableHover": false
 }
