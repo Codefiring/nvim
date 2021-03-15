@@ -120,10 +120,16 @@ Plug 'mhinz/vim-signify'
 Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 
 " Editor Enhancement
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'Yggdroot/indentLine'
+Plug 'tomtom/tcomment_vim'
+
+" Visual enhancement 
+Plug 'luochen1990/rainbow'
+Plug 'ryanoasis/vim-devicons'
 
 
 " ===
@@ -178,7 +184,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use <LEADER>h to show documentation in preview window.
-nnoremap <silent> <LEADER>h :call <SID>show_documentation()<CR>
+nnoremap <silent> <LEADER>H :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
@@ -250,7 +256,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-
 let g:coc_global_extensions = [
             \'coc-vimlsp',
             \'coc-json',
@@ -269,8 +274,16 @@ let g:coc_global_extensions = [
             \'coc-gitignore',
             \'coc-explorer']
 
+"=== tcomment_vim
+nmap <LEADER>cn g>c
+vmap <LEADER>cn g>
+nmap <LEADER>cu g<c
+vmap <LEADER>cu g<
+
+"=== rainbow
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
 
 
 
-
+"
 call plug#end()
