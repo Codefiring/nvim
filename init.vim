@@ -123,6 +123,7 @@ Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'Yggdroot/indentLine'
 
 
 " ===
@@ -234,6 +235,20 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "===coc.spell-checker
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
+
+"===coc.snippets
+"Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
 
 
 let g:coc_global_extensions = [
