@@ -146,6 +146,29 @@ vmap <LEADER>cu g<
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
 
 
+
+let g:coc_global_extensions = [
+            \'coc-diagnostic',
+            \'coc-vimlsp',
+            \'coc-json',
+            \'coc-python',
+            \'coc-snippets',
+            \'coc-marketplace',
+            \'coc-prettier',
+            \'coc-clangd',
+            \'coc-translator',
+            \'coc-tsserver',
+            \'coc-syntax',
+            \'coc-lists',
+            \'coc-calc',
+            \'coc-highlight',
+            \'coc-gitignore',
+            \'coc-yank',
+            \'coc-explorer']
+
+"            \'coc-spell-checker',
+
+
 "
 " ===
 " === coc.nvim
@@ -254,8 +277,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 "===coc.spell-checker
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
+"vmap <leader>a <Plug>(coc-codeaction-selected)
+"nmap <leader>a <Plug>(coc-codeaction-selected)
 
 "===coc.snippets
 "Use <C-l> for trigger snippet expand.
@@ -270,26 +293,6 @@ let g:coc_snippet_prev = '<c-k>'
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
-
-let g:coc_global_extensions = [
-            \'coc-diagnostic',
-            \'coc-vimlsp',
-            \'coc-json',
-            \'coc-python',
-            \'coc-snippets',
-            \'coc-marketplace',
-            \'coc-prettier',
-            \'coc-clangd',
-            \'coc-translator',
-            \'coc-tsserver',
-            \'coc-syntax',
-            \'coc-lists',
-            \'coc-calc',
-            \'coc-highlight',
-            \'coc-spell-checker',
-            \'coc-gitignore',
-            \'coc-yank',
-            \'coc-explorer']
 
 
 
