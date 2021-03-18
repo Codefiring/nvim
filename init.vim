@@ -132,6 +132,7 @@ Plug 'tomtom/tcomment_vim'
 " Visual enhancement 
 Plug 'luochen1990/rainbow'
 Plug 'ryanoasis/vim-devicons'
+call plug#end()
 
 "============= Plug settings ================
 "
@@ -298,4 +299,3 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 
 
 "
-call plug#end()
